@@ -24,17 +24,11 @@ if conta == "Empresa" or conta == "empresa":
                 print('Os dados do CEO estão corretos?\nNome Completo: ', nomCEO, '\nCPF: ', cpfCEO, '\nRegistro Geral: ', rgCEO, '\nEndereço Residencial: ', endCEO) 
                 correto = Escolha(escolhaSimNao, '\nOs dados do CEO estão corretos?:\n(sim/nao)->  ')
                 if correto == 'sim':
-                    print('tmj mlk slk vlw dms')
                     print('Para melhorarmos sua experiência, nos diga o segmento de sua Empresa: ')
-                    print(f'{' '.join(segmentosID}:{segmentosNome}')
-                    for i, nome in enumerate(segmentosNome):
-                        print(f"{segmentosID[i]}. {nome}")
-
-                        selecionado = Escolha(segmentosID, "Qual segmento você deseja selecionar?: ")
-
-                        print(f"Você selecionou: {segmentosNome[int(selecionado) - 1]}")
-
-            break
-
+                    print('--------------------------')
+                    for i in range(len(segmentosNome)):
+                        print(f'{segmentosID[i]}. {segmentosNome[i]}')
+                    print('--------------------------')
+                    selecionado = Escolha(segmentosID, "Selecione o ID do Segmento desejado:\n->  ")
 
 

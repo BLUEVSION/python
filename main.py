@@ -1,4 +1,4 @@
-from listas import escolhaConta, escolhaSimNao, segmentosNome, segmentosID
+from listas import escolhaConta, escolhaSimNao, segmentosNome, segmentosID, segmentosDesc
 from funcoes import Escolha
 
 conta = Escolha(escolhaConta, 'Você é uma Pessoa ou Empresa?')
@@ -30,5 +30,9 @@ if conta == "Empresa" or conta == "empresa":
                         print(f'{segmentosID[i]}. {segmentosNome[i]}')
                     print('--------------------------')
                     selecionado = Escolha(segmentosID, "Selecione o ID do Segmento desejado:\n->  ")
+
+                    indice = segmentosID.index(selecionado)
+                    
+                    print(segmentosDesc[indice])
 
 

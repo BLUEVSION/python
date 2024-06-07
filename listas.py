@@ -1,6 +1,6 @@
 escolhaConta = ['pessoa', 'empresa', 'Pessoa', 'Empresa']
 escolhaSimNao = ['sim', 'nao']
-segmentosNome = ['Pescaria','Energia','Tursimo','Petrolífica']
+segmentosNome = ['Pescaria','Energia','Turismo','Petrolifica']
 segmentosID = ['1','2','3','4']
 segmentosDesc = [
                 'Para sua empresa de PESCA, iremos organizar e separar exatamente suas áreas de atuação, onde poderá realizar suas atividades sem impactar negativamente na vida marinha, tanto na vida dos animais quanto nas rotas comerciais, habbitats naturais e suas áreas de preservação.'
@@ -15,3 +15,30 @@ nome_ceos= []
 cpf_ceos = []
 rg_ceos = []
 end_ceos = []
+
+#DADOS DOS SEGMENTOS
+
+dados_pesca = {
+    "Zonas de Pesca": ["Atlântico Norte", "Atlântico Sul", "Pacífico Equatorial"],
+    "Estoque de Peixes": {"Sardinha": 10000, "Atum": 5000, "Bacalhau": 7000},
+    "Temporadas de Pesca": {"Sardinha": "Maio a Setembro", "Atum": "Janeiro a Dezembro", "Bacalhau": "Julho a Agosto"},
+    "Métodos de Pesca": ["Redes de cerco", "Arrasto de fundo", "Pesca de linha"]
+}
+
+dados_energia = {
+    "Localização de Recursos": ["Parque Eólico X", "Planta de Energia das Marés Y", "Projeto de Energia das Ondas Z"],
+    "Infraestrutura Submarina": {"Cabos submarinos": 15, "Plataformas de petróleo": 5},
+    "Impactos Ambientais": "Estudos em andamento"
+}
+
+dados_turismo = {
+    "Zonas de Turismo": ["Recife de Corais A", "Praia B", "Ilha C"],
+    "Infraestrutura de Apoio": ["Marina Central", "Hotéis à beira-mar", "Restaurantes"],
+    "Dados Ambientais": {"Qualidade da Água": "Boa", "Biodiversidade Marinha": "Rica", "Áreas Protegidas": ["Parque Nacional X", "Reserva Marinha Y"]}
+}
+
+dados_petrolifero = {
+    "Reservas de Petróleo e Gás": {"Campo de Petróleo A": 500000, "Campo de Gás B": 300000},
+    "Riscos Ambientais": "Estudos em andamento",
+    "Infraestrutura": {"Plataformas Offshore": 10, "Oleodutos": 4}
+}

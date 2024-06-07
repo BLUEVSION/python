@@ -1,4 +1,4 @@
-from listas import escolhaConta, escolhaSimNao, segmentosNome, segmentosID, segmentosDesc
+from listas import escolhaConta, escolhaSimNao, segmentosNome, segmentosID, segmentosDesc, dados_energia, dados_pesca, dados_petrolifero, dados_turismo
 # nome_ceos, cpf_ceos, rg_ceos, end_ceos
 from funcoes import Escolha, verificar_num, meu_index
 
@@ -62,24 +62,49 @@ if conta == "Empresa" or conta == "empresa":
                 else:    
                     break
 
-        print('Para melhorarmos sua experiência, nos diga o segmento de sua Empresa: ')
-        print('--------------------------------------------------------------')
-        for i in range(len(segmentosNome)):
-            print(f'{segmentosID[i]}. {segmentosNome[i]}')
-        print('--------------------------------------------------------------')
-        # selecionado = Escolha(segmentosID, "Selecione o ID do Segmento desejado:\n->  ")
+            while True:
+                print('Para melhorarmos sua experiência, nos diga o segmento de sua Empresa: ')
+                print('--------------------------------------------------------------')
+                for i in range(len(segmentosNome)):
+                    print(f'{segmentosID[i]}. {segmentosNome[i]}')
+                print('--------------------------------------------------------------')
+                # selecionado = Escolha(segmentosID, "Selecione o ID do Segmento desejado:\n->  ")
+                
+
+                # # indice = meu_index(segmentosID,selecionado) 
+                # # print(indice)
+                # # print(segmentosDesc[indice])
+                # indice = segmentosID.index(selecionado)
+                        
+                # print(segmentosDesc[indice])
+
+                selecionado = Escolha(segmentosNome, "Escreva o nome do segmento desejado:\n->  ")
+
+                indice = meu_index(segmentosNome,selecionado)      
+                print(segmentosDesc[indice])
+
+                correto = Escolha(escolhaSimNao, "Você deseja seguir com este seguimento?:\n(sim/nao)-> ")
+                if correto == 'sim':
+                    if selecionado == 'Pescaria':
+                        print("Dados Relevantes para o Segmento de Pesca:")
+                        for i, y in dados_pesca.items():
+                            print(f"{i}: {y}")
+
+                    elif selecionado == 'Energia':
+                        print("Dados Relevantes para o Segmento de Energia:")
+                        for i, y in dados_energia.items():
+                            print(f"{i}: {y}")
+
+                    elif selecionado == 'Turismo':
+                        print("Dados Relevantes para o Segmento de Turismo:")
+                        for i, y in dados_turismo.items():
+                            print(f"{i}: {y}")
+                    
+                    elif selecionado == 'Petrolifica':
+                        print("Dados Relevantes para o Segmento de Petrolifica:")
+                        for i, y in dados_petrolifero.items():
+                            print(f"{i}: {y}")
         
 
-        # # indice = meu_index(segmentosID,selecionado) 
-        # # print(indice)
-        # # print(segmentosDesc[indice])
-        # indice = segmentosID.index(selecionado)
-                
-        # print(segmentosDesc[indice])
-
-        selecionado = Escolha(segmentosNome, "Escreva o nome do segmento desejado:\n->  ")
-
-        indice = meu_index(segmentosNome,selecionado)      
-        print(segmentosDesc[indice])
 
 

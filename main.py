@@ -83,25 +83,25 @@ if conta == "Empresa" or conta == "empresa":
                 indice = meu_index(segmentosNome,selecionado)      
                 print(segmentosDesc[indice])
 
-                correto = Escolha(escolhaSimNao, "Você deseja seguir com este seguimento?:\n(sim/nao)-> ")
+                correto = Escolha(escolhaSimNao, "\nVocê deseja seguir com este seguimento?:\n(sim/nao)-> ")
                 if correto == 'sim':
                     if selecionado == 'Pescaria':
-                        print("Dados Relevantes para o Segmento de Pesca:")
+                        print("Dados Relevantes para o Segmento de Pesca:\n")
                         for i, y in dados_pesca.items():
                             print(f"{i}: {y}")
 
                     elif selecionado == 'Energia':
-                        print("Dados Relevantes para o Segmento de Energia:")
+                        print("Dados Relevantes para o Segmento de Energia:\n")
                         for i, y in dados_energia.items():
                             print(f"{i}: {y}")
 
                     elif selecionado == 'Turismo':
-                        print("Dados Relevantes para o Segmento de Turismo:")
+                        print("Dados Relevantes para o Segmento de Turismo:\n")
                         for i, y in dados_turismo.items():
                             print(f"{i}: {y}")
                     
-                    elif selecionado == 'Petrolifica':
-                        print("Dados Relevantes para o Segmento de Petrolifica:")
+                    else:
+                        print("Dados Relevantes para o Segmento de Petrolifica:\n")
                         for i, y in dados_petrolifero.items():
                             print(f"{i}: {y}")
         

@@ -105,7 +105,7 @@ if conta == "Empresa" or conta == "empresa":
                         print("Dados Relevantes para o Segmento de Petrolifica:\n")
                         for i, y in dados_petrolifero.items():
                             print(f"{i}: {y}")
-                    break
+                break
 else:
     print('Sentimos muito, mas esse site é restrito para empresas! :(')
 

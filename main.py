@@ -1,12 +1,15 @@
+#Importando as funções e listas que estão armazenadas em outro documento py
 from listas import escolhaConta, escolhaSimNao, segmentosNome, segmentosID, segmentosDesc, dados_energia, dados_pesca, dados_petrolifero, dados_turismo
 # nome_ceos, cpf_ceos, rg_ceos, end_ceos
 from funcoes import Escolha, verificar_num, meu_index
 
+#listas vazias para guardar as informações dos ceos
 nome_ceos= []
 cpf_ceos = []
 rg_ceos  = []
 end_ceos = []
 
+#Essa é a seção de cadastro das empresas
 conta = Escolha(escolhaConta, 'Você é uma Pessoa ou Empresa?')
 if conta == "Empresa" or conta == "empresa":
     while True:
@@ -21,6 +24,7 @@ if conta == "Empresa" or conta == "empresa":
         correto = Escolha(escolhaSimNao, '\nSeus dados estão corretos?:\n(sim/nao)->  ')
         if correto == 'sim':
             while True:
+                #seção de cadastro dos ceos
                 print('--------------------------------------------------------------')
                 print('\nPor favor, cadastre agora os dados de seu CEO\n')
                 nomCEO = input('Insira o Nome Completo de seu CEO:\n-> ')
@@ -37,6 +41,7 @@ if conta == "Empresa" or conta == "empresa":
                 # print(rg_ceos)
                 # print(end_ceos)
                 
+                #se possuir mais ceos, o código voltará para o início do while, solicitando os dados do ceo
                 mais_cadastro = Escolha(escolhaSimNao,'\nPossui mais algum CEO? (sim/nao)-> ')
                 if mais_cadastro == 'sim':
                     continue
@@ -47,6 +52,7 @@ if conta == "Empresa" or conta == "empresa":
 
                 correto = Escolha(escolhaSimNao, '\nOs dados do CEO estão corretos?:\n(sim/nao)->  ')
 
+                #se os dados estiverem incorretos, o usuário deverá indicar, pela númeração(índice), qual ceo está com os dados incorretos. Após isso, o "del" irá deletar todos os dados das listas do ceo indicado pelo indice
                 if correto == 'nao':
                     errado = verificar_num('Os dados de qual CEO estão incorretos? Digite o número do CEO\n')
                     del nome_ceos[errado]
@@ -54,29 +60,22 @@ if conta == "Empresa" or conta == "empresa":
                     del rg_ceos[errado]
                     del end_ceos[errado]
                     
-                    print(nome_ceos)
-                    print(cpf_ceos)
-                    print(rg_ceos)
-                    print(end_ceos)
+                    # print(nome_ceos) #print somente para testes
+                    # print(cpf_ceos)
+                    # print(rg_ceos)
+                    # print(end_ceos)
                     continue
                 else:    
                     break
-
+            
+            
             while True:
+                #Aqui é uma simulação da nossa solução BlueVision, onde a empresa escolherá o segmento em que ela atua
                 print('Para melhorarmos sua experiência, nos diga o segmento de sua Empresa: ')
                 print('--------------------------------------------------------------')
                 for i in range(len(segmentosNome)):
                     print(f'{segmentosID[i]}. {segmentosNome[i]}')
                 print('--------------------------------------------------------------')
-                # selecionado = Escolha(segmentosID, "Selecione o ID do Segmento desejado:\n->  ")
-                
-
-                # # indice = meu_index(segmentosID,selecionado) 
-                # # print(indice)
-                # # print(segmentosDesc[indice])
-                # indice = segmentosID.index(selecionado)
-                        
-                # print(segmentosDesc[indice])
 
                 selecionado = Escolha(segmentosNome, "Escreva o nome do segmento desejado:\n->  ")
 
@@ -84,6 +83,8 @@ if conta == "Empresa" or conta == "empresa":
                 print(segmentosDesc[indice])
 
                 correto = Escolha(escolhaSimNao, "\nVocê deseja seguir com este seguimento?:\n(sim/nao)-> ")
+                
+                #Nessa seção, será apresentado alguns dados para o usuário referente ao segmento selecionado por ele. 
                 if correto == 'sim':
                     if selecionado == 'Pescaria':
                         print("Dados Relevantes para o Segmento de Pesca:\n")
@@ -104,8 +105,8 @@ if conta == "Empresa" or conta == "empresa":
                         print("Dados Relevantes para o Segmento de Petrolifica:\n")
                         for i, y in dados_petrolifero.items():
                             print(f"{i}: {y}")
-                            break
-        
-
+                    break
+else:
+    print('Sentimos muito, mas esse site é restrito para empresas! :(')
 
 
